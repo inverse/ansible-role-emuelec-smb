@@ -1,0 +1,15 @@
+[Unit]
+Description=Mounting {{ item.smb_dir }} folder on samba
+Requires=network-online.service
+After=network-online.service
+Before=emustation.service
+
+[Mount]
+What=//{{ smb_host_path }}/{{ item.smb_dir }}
+Where=/storage/roms/{{ item.rom_dir }}
+#The following option might not be required if your CIFS/SAMBA share is shared publicly without requiring any credentials) 
+Options=username={{ smb_username }},password={{ smb_password }}{% if smb_v3 %},vers=3.0{% endif %}
+Type=cifs
+
+[Install]
+WantedBy=multi-user.target

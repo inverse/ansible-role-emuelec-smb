@@ -1,0 +1,6 @@
+galaxy_info:
+  author: Malachi Soord
+  description: Configure SMB shares for EmuELEC
+  license: license (MIT)
+  min_ansible_version: 2.19
+  galaxy_tags: []

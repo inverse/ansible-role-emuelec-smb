@@ -1,0 +1,25 @@
+---
+- name: Check storage systemd directory exists
+  ansible.builtin.stat:
+    path: /storage/.config/system.d
+  register: storage
+
+- name: Create if it does not exist
+  file:
+    path: /storage/.config/system.d
+    state: directory
+  when: storage.stat.exists == false
+
+- name: Create systemd share mounts
+  template: 
+    src: templates/storage-rom.mount.j2
+    dest: /storage/.config/system.d/storage-roms-{{ item.rom_dir }}.mount
+  with_items: "{{ rom_map }}"
+
+- name: Enable and start systemd share mounts
+  systemd:
+    name: storage-roms-{{ item.rom_dir }}.mount
+    enabled: yes
+    state: started
+  with_items: "{{ rom_map }}"
+  

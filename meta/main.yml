@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: emuelec-smb
   author: Malachi Soord
   description: Configure SMB shares for EmuELEC
   license: license (MIT)

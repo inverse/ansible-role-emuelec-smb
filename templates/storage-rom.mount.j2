@@ -7,8 +7,9 @@ Before=emustation.service
 [Mount]
 What=//{{ smb_host_path }}/{{ item.smb_dir }}
 Where=/storage/roms/{{ item.rom_dir }}
-Type=cifs
 Options=username={{ smb_username }},password={{ smb_password }}{% if smb_v3 %},vers=3.0{% endif %}
+
+Type=cifs
 
 [Install]
 WantedBy=multi-user.target

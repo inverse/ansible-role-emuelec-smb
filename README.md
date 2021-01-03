@@ -31,7 +31,7 @@ Setup a new project with an inventory file pointing to your EmuELEC setup and cr
     - { rom_dir: 'n64', smb_dir: 'N64'}
     - { rom_dir: 'neogeo', smb_dir: 'NeoGeo'}
   roles:
-    - emuelec_smb
+    - inverse.emuelec_smb
 ```
 
 ```bash

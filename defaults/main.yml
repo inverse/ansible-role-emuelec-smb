@@ -6,10 +6,10 @@ smb_host_path: ''
 smb_username: ''
 smb_password: ''
 
-# Whether to you SMB V3
+# Whether to use SMB V3
 smb_v3: false
 
-# Mapping of roms from emuelec rom dir to SMB rom dir
+# Mapping of roms from EmuELEC rom dir to SMB rom dir
 rom_map: []
 # - { rom_dir: 'snes', smb_dir: 'SNES'}
 # - { rom_dir: 'nes', smb_dir: 'NES'}
